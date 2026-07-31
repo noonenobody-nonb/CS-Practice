@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<!-- saved from url=(0076)http://127.0.0.1:8080/WebGoat/start.mvc?username=student2#lesson/IDOR.lesson -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-store">
+
+    <!--  CSS -->
+    <link rel="shortcut icon" href="http://127.0.0.1:8080/WebGoat/css/img/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" type="text/css" href="./WebGoat_IDOR_files/main.css">
+    <link rel="stylesheet" type="text/css" href="./WebGoat_IDOR_files/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="./WebGoat_IDOR_files/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="./WebGoat_IDOR_files/animate.css">
+    <link rel="stylesheet" type="text/css" href="./WebGoat_IDOR_files/coderay.css">
+    <!--  end of CSS -->
+
+    <!-- Require.js used to load js asynchronously -->
+    <script src="./WebGoat_IDOR_files/require.min.js" data-main="js/main"></script>
+    
+    <title>WebGoat</title>
+<script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="main" src="./WebGoat_IDOR_files/main.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="search" src="./WebGoat_IDOR_files/search.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="jquery" src="./WebGoat_IDOR_files/jquery.min.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="jqueryvuln" src="./WebGoat_IDOR_files/jquery-2.1.4.min.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="goatApp/goatApp" src="./WebGoat_IDOR_files/goatApp.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="underscore" src="./WebGoat_IDOR_files/underscore-min.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="jqueryui" src="./WebGoat_IDOR_files/jquery-ui.min.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="bootstrap" src="./WebGoat_IDOR_files/bootstrap.min.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="backbone" src="./WebGoat_IDOR_files/backbone-min.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="polyglot" src="./WebGoat_IDOR_files/polyglot.min.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="goatApp/view/GoatRouter" src="./WebGoat_IDOR_files/GoatRouter.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="goatApp/support/goatAsyncErrorHandler" src="./WebGoat_IDOR_files/goatAsyncErrorHandler.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="jqueryuivuln" src="./WebGoat_IDOR_files/jquery-ui-1.10.4.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="goatApp/controller/LessonController" src="./WebGoat_IDOR_files/LessonController.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="goatApp/controller/MenuController" src="./WebGoat_IDOR_files/MenuController.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="goatApp/view/LessonContentView" src="./WebGoat_IDOR_files/LessonContentView.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="goatApp/view/MenuView" src="./WebGoat_IDOR_files/MenuView.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="goatApp/view/TitleView" src="./WebGoat_IDOR_files/TitleView.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="goatApp/model/LessonContentModel" src="./WebGoat_IDOR_files/LessonContentModel.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="goatApp/view/HintView" src="./WebGoat_IDOR_files/HintView.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="goatApp/view/HelpControlsView" src="./WebGoat_IDOR_files/HelpControlsView.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="goatApp/support/GoatUtils" src="./WebGoat_IDOR_files/GoatUtils.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="goatApp/view/UserAndInfoView" src="./WebGoat_IDOR_files/UserAndInfoView.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="goatApp/view/MenuButtonView" src="./WebGoat_IDOR_files/MenuButtonView.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="goatApp/model/LessonInfoModel" src="./WebGoat_IDOR_files/LessonInfoModel.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="libs/jquery.form" src="./WebGoat_IDOR_files/jquery.form.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="goatApp/view/ErrorNotificationView" src="./WebGoat_IDOR_files/ErrorNotificationView.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="goatApp/view/PaginationControlView" src="./WebGoat_IDOR_files/PaginationControlView.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="goatApp/model/MenuCollection" src="./WebGoat_IDOR_files/MenuCollection.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="goatApp/view/MenuItemView" src="./WebGoat_IDOR_files/MenuItemView.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="goatApp/model/HTMLContentModel" src="./WebGoat_IDOR_files/HTMLContentModel.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="goatApp/model/HintCollection" src="./WebGoat_IDOR_files/HintCollection.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="goatApp/model/LessonOverviewCollection" src="./WebGoat_IDOR_files/LessonOverviewCollection.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="text" src="./WebGoat_IDOR_files/text.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="goatApp/model/MenuModel" src="./WebGoat_IDOR_files/MenuModel.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="goatApp/model/HintModel" src="./WebGoat_IDOR_files/HintModel.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="goatApp/model/AssignmentStatusModel" src="./WebGoat_IDOR_files/AssignmentStatusModel.js"></script></head>
+<body>
+
+<section id="container">
+    <header id="header">
+        <!--logo start-->
+        <div class="brand">
+            <a href="http://127.0.0.1:8080/WebGoat/welcome.mvc" class="logo"><span>Web</span>Goat</a>
+        </div>
+        <!--logo end-->
+        <div id="lesson-title-wrapper"><h1 id="lesson-title">Insecure Direct Object References</h1></div><!--lesson title end-->
+        <div style="position: absolute;width:600px; z-index:3; top:22px; right: -90px;">
+            <input class="form-control" type="text" id="search" name="search" placeholder="Search lesson" style="width:200px;display:inline-block">
+
+            <!-- webwolf menu item -->
+            <a href="http://127.0.0.1:8080/WebGoat/WebWolf" target="_blank">
+                <button type="button" id="webwolf-button" class="btn btn-default right_nav_button" title="WebWolf">
+                    <img src="./WebGoat_IDOR_files/wolf.svg">
+                </button>
+            </a>
+            <!-- user menu item -->
+            <div class="btn-group">
+            <div class="dropdown" style="display:inline">
+                <button type="button" data-toggle="dropdown" class="btn btn-default dropdown-toggle" id="user-menu">
+                    <i class="fa fa-user"></i> <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu dropdown-menu-left">
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="http://127.0.0.1:8080/WebGoat/logout">Logout</a></li>
+                    <li role="presentation" class="divider"></li>
+                    <li role="presentation" class="disabled"><a role="menuitem" tabindex="-1" href="http://127.0.0.1:8080/WebGoat/start.mvc?username=student2#">User: <span>student2</span></a>
+                    </li>
+                    <li role="presentation" class="disabled"><a role="menuitem" tabindex="-1" href="http://127.0.0.1:8080/WebGoat/start.mvc?username=student2#">Role:
+                        <span>User</span>
+                        
+                    </a>
+                    </li>
+                    <li role="presentation" class="divider"></li>
+                    <li role="presentation" class="disabled"><a role="menuitem" tabindex="-1" href="http://127.0.0.1:8080/WebGoat/start.mvc?username=student2#">
+                        <span>Version</span><span>: </span>
+                        <span>2025.3</span></a>
+                    </li>
+                    <li role="presentation" class="disabled"><a role="menuitem" tabindex="-1" href="http://127.0.0.1:8080/WebGoat/start.mvc?username=student2#">
+                        <span>Build</span><span>: </span>
+                        <span></span></a>
+                    </li>
+                </ul>
+            </div>
+            </div>
+            <!-- language select menu item -->
+            <!-- free flag images from https://flagicons.lipis.dev -->
+            <div class="btn-group">
+            <div class="dropdown" style="display:inline">
+                <button type="button" data-toggle="dropdown" class="btn btn-default dropdown-toggle" id="lang-button">
+                    <div>
+                        
+                        
+                        
+                        <div>
+                            <img src="./WebGoat_IDOR_files/enlang.svg"><span class="caret"></span>
+                        </div>
+                    </div>
+                </button>
+                <ul class="dropdown-menu dropdown-menu-left">
+                    <li role="presentation">
+                        <a role="menuitem" href="http://127.0.0.1:8080/WebGoat/start.mvc?lang=en#lesson/WebGoatIntroduction.lesson">
+                            <img src="./WebGoat_IDOR_files/enlang.svg" alt="English" height="20"> English
+                        </a>
+                    </li>
+                    <li role="presentation" class="divider"></li>
+                    <li role="presentation">
+                        <a role="menuitem" href="http://127.0.0.1:8080/WebGoat/start.mvc?lang=de#lesson/WebGoatIntroduction.lesson">
+                            <img src="./WebGoat_IDOR_files/delang.svg" alt="Deutsch" height="20"> Deutsch
+                        </a>
+                    </li>
+                    <li role="presentation">
+                        <a role="menuitem" href="http://127.0.0.1:8080/WebGoat/start.mvc?lang=fr#lesson/WebGoatIntroduction.lesson">
+                            <img src="./WebGoat_IDOR_files/frlang.svg" alt="Français" height="20"> Français
+                        </a>
+                    </li>
+                    <li role="presentation">
+                        <a role="menuitem" href="http://127.0.0.1:8080/WebGoat/start.mvc?lang=nl#lesson/WebGoatIntroduction.lesson">
+                            <img src="./WebGoat_IDOR_files/nllang.svg" alt="Nederlands" height="20"> Nederlands
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            </div>
+            <!-- reportcard menu item -->
+            <div style="display:inline" id="settings">
+                <!--<button type="button" id="admin-button" class="btn btn-default right_nav_button" title="Administrator">-->
+                <!--<i class="fa fa-cog"></i>-->
+                <!--</button>-->
+                <a href="http://127.0.0.1:8080/WebGoat/start.mvc?username=student2#reportCard">
+                    <button type="button" id="report-card-button" class="btn btn-default right_nav_button button-up" title="Report card">
+                       <i class="fa fa-bar-chart-o"></i>
+                    </button>
+                </a>
+                <!--<button type="button" id="user-management" class="btn btn-default right_nav_button"-->
+                <!--title="User management">-->
+                <!--<i class="fa fa-users"></i>-->
+                <!--</button>-->
+            </div>
+            <!-- about menu item -->
+            <button type="button" id="about-button" class="btn btn-default right_nav_button" title="About WebGoat" data-toggle="modal" data-target="#about-modal">
+                <i class="fa fa-info"></i>
+            </button>
+            <!-- mailto menu item -->
+            <a href="mailto:webgoat@owasp.org?Subject=Webgoat%20feedback" target="_top">
+                <button type="button" class="btn btn-default right_nav_button" data-toggle="tooltip" title="Contact Us">
+                    <i class="fa fa-envelope"></i>
+                </button>
+            </a>
+
+
+
+        </div>
+    </header>
+
+    <aside class="sidebar">
+        <div id="menu-container"><ul class="nano-content"><li class="sub-menu ng-scope"><a category="Introduction"><i class="fa fa-angle-right pull-right"></i><span>Introduction</span></a><ul class="slideDown lessonsAndStages" id="Introduction"><li class="lesson"><a href="http://127.0.0.1:8080/WebGoat/start.mvc?username=student2#lesson/WebGoatIntroduction.lesson" id="Introduction-WebGoat">WebGoat</a><span class="glyphicon glyphicon-check lesson-complete"></span></li><li class="lesson"><a href="http://127.0.0.1:8080/WebGoat/start.mvc?username=student2#lesson/WebWolfIntroduction.lesson" id="Introduction-WebWolf">WebWolf</a></li></ul></li><li class="sub-menu ng-scope"><a category="General"><i class="fa fa-angle-right pull-right"></i><span>General</span></a><ul class="slideDown lessonsAndStages" id="General"><li class="lesson"><a href="http://127.0.0.1:8080/WebGoat/start.mvc?username=student2#lesson/HttpBasics.lesson" id="General-HTTPBasics">HTTP Basics</a></li><li class="lesson"><a href="http://127.0.0.1:8080/WebGoat/start.mvc?username=student2#lesson/HttpProxies.lesson" id="General-HTTPProxies">HTTP Proxies</a></li><li class="lesson"><a href="http://127.0.0.1:8080/WebGoat/start.mvc?username=student2#lesson/ChromeDevTools.lesson" id="General-DeveloperTools">Developer Tools</a></li><li class="lesson"><a href="http://127.0.0.1:8080/WebGoat/start.mvc?username=student2#lesson/CIA.lesson" id="General-CIATriad">CIA Triad</a></li><li class="lesson"><a href="http://127.0.0.1:8080/WebGoat/start.mvc?username=student2#lesson/LessonTemplate.lesson" id="General-Writingnewlesson">Writing new lesson</a></li></ul></li><li class="sub-menu ng-scope"><a category="A1BrokenAccessControl"><i class="fa fa-angle-right pull-right"></i><span>(A1) Broken Access Control</span></a><ul class="slideDown lessonsAndStages" id="A1BrokenAccessControl" style="display: block;"><li class="lesson"><a href="http://127.0.0.1:8080/WebGoat/start.mvc?username=student2#lesson/HijackSession.lesson" id="A1BrokenAccessControl-Hijackasession">Hijack a session</a><span class="glyphicon glyphicon-check lesson-complete"></span></li><li class="lesson selected"><a href="http://127.0.0.1:8080/WebGoat/start.mvc?username=student2#lesson/IDOR.lesson" id="A1BrokenAccessControl-InsecureDirectObjectReferences">Insecure Direct Object References</a></li><li class="lesson"><a href="http://127.0.0.1:8080/WebGoat/start.mvc?username=student2#lesson/MissingFunctionAC.lesson" id="A1BrokenAccessControl-MissingFunctionLevelAccessControl">Missing Function Level Access Control</a></li><li class="lesson"><a href="http://127.0.0.1:8080/WebGoat/start.mvc?username=student2#lesson/SpoofCookie.lesson" id="A1BrokenAccessControl-SpoofinganAuthenticationCookie">Spoofing an Authentication Cookie</a></li></ul></li><li class="sub-menu ng-scope"><a category="A2CryptographicFailures"><i class="fa fa-angle-right pull-right"></i><span>(A2) Cryptographic Failures</span></a><ul class="slideDown lessonsAndStages" id="A2CryptographicFailures"><li class="lesson"><a href="http://127.0.0.1:8080/WebGoat/start.mvc?username=student2#lesson/Cryptography.lesson" id="A2CryptographicFailures-CryptoBasics">Crypto Basics</a></li></ul></li><li class="sub-menu ng-scope"><a category="A3Injection"><i class="fa fa-angle-right pull-right"></i><span>(A3) Injection</span></a><ul class="slideDown lessonsAndStages" id="A3Injection"><li class="lesson"><a href="http://127.0.0.1:8080/WebGoat/start.mvc?username=student2#lesson/SqlInjection.lesson" id="A3Injection-SQLInjectionintro">SQL Injection (intro)</a></li><li class="lesson"><a href="http://127.0.0.1:8080/WebGoat/start.mvc?username=student2#lesson/SqlInjectionAdvanced.lesson" id="A3Injection-SQLInjectionadvanced">SQL Injection (advanced)</a></li><li class="lesson"><a href="http://127.0.0.1:8080/WebGoat/start.mvc?username=student2#lesson/SqlInjectionMitigations.lesson" id="A3Injection-SQLInjectionmitigation">SQL Injection (mitigation)</a></li><li class="lesson"><a href="http://127.0.0.1:8080/WebGoat/start.mvc?username=student2#lesson/CrossSiteScripting.lesson" id="A3Injection-CrossSiteScripting">Cross Site Scripting</a></li><li class="lesson"><a href="http://127.0.0.1:8080/WebGoat/start.mvc?username=student2#lesson/CrossSiteScriptingStored.lesson" id="A3Injection-CrossSiteScriptingstored">Cross Site Scripting (stored)</a></li><li class="lesson"><a href="http://127.0.0.1:8080/WebGoat/start.mvc?username=student2#lesson/CrossSiteScriptingMitigation.lesson" id="A3Injection-CrossSiteScriptingmitigation">Cross Site Scripting (mitigation)</a></li><li class="lesson"><a href="http://127.0.0.1:8080/WebGoat/start.mvc?username=student2#lesson/PathTraversal.lesson" id="A3Injection-Pathtraversal">Path traversal</a></li></ul></li><li class="sub-menu ng-scope"><a category="A5SecurityMisconfiguration"><i class="fa fa-angle-right pull-right"></i><span>(A5) Security Misconfiguration</span></a><ul class="slideDown lessonsAndStages" id="A5SecurityMisconfiguration"><li class="lesson"><a href="http://127.0.0.1:8080/WebGoat/start.mvc?username=student2#lesson/CSRF.lesson" id="A5SecurityMisconfiguration-Cross-SiteRequestForgeries">Cross-Site Request Forgeries</a></li><li class="lesson"><a href="http://127.0.0.1:8080/WebGoat/start.mvc?username=student2#lesson/XXE.lesson" id="A5SecurityMisconfiguration-XXE">XXE</a></li></ul></li><li class="sub-menu ng-scope"><a category="A6VulnOutdatedComponents"><i class="fa fa-angle-right pull-right"></i><span>(A6) Vuln &amp; Outdated Components</span></a><ul class="slideDown lessonsAndStages" id="A6VulnOutdatedComponents"><li class="lesson"><a href="http://127.0.0.1:8080/WebGoat/start.mvc?username=student2#lesson/VulnerableComponents.lesson" id="A6VulnOutdatedComponents-VulnerableComponents">Vulnerable Components</a></li></ul></li><li class="sub-menu ng-scope"><a category="A7IdentityAuthFailure"><i class="fa fa-angle-right pull-right"></i><span>(A7) Identity &amp; Auth Failure</span></a><ul class="slideDown lessonsAndStages" id="A7IdentityAuthFailure"><li class="lesson"><a href="http://127.0.0.1:8080/WebGoat/start.mvc?username=student2#lesson/AuthBypass.lesson" id="A7IdentityAuthFailure-AuthenticationBypasses">Authentication Bypasses</a></li><li class="lesson"><a href="http://127.0.0.1:8080/WebGoat/start.mvc?username=student2#lesson/InsecureLogin.lesson" id="A7IdentityAuthFailure-InsecureLogin">Insecure Login</a></li><li class="lesson"><a href="http://127.0.0.1:8080/WebGoat/start.mvc?username=student2#lesson/JWT.lesson" id="A7IdentityAuthFailure-JWTtokens">JWT tokens</a></li><li class="lesson"><a href="http://127.0.0.1:8080/WebGoat/start.mvc?username=student2#lesson/PasswordReset.lesson" id="A7IdentityAuthFailure-Passwordreset">Password reset</a></li><li class="lesson"><a href="http://127.0.0.1:8080/WebGoat/start.mvc?username=student2#lesson/SecurePasswords.lesson" id="A7IdentityAuthFailure-SecurePasswords">Secure Passwords</a></li></ul></li><li class="sub-menu ng-scope"><a category="A8SoftwareDataIntegrity"><i class="fa fa-angle-right pull-right"></i><span>(A8) Software &amp; Data Integrity</span></a><ul class="slideDown lessonsAndStages" id="A8SoftwareDataIntegrity"><li class="lesson"><a href="http://127.0.0.1:8080/WebGoat/start.mvc?username=student2#lesson/InsecureDeserialization.lesson" id="A8SoftwareDataIntegrity-InsecureDeserialization">Insecure Deserialization</a></li></ul></li><li class="sub-menu ng-scope"><a category="A9SecurityLoggingFailures"><i class="fa fa-angle-right pull-right"></i><span>(A9) Security Logging Failures</span></a><ul class="slideDown lessonsAndStages" id="A9SecurityLoggingFailures"><li class="lesson"><a href="http://127.0.0.1:8080/WebGoat/start.mvc?username=student2#lesson/LogSpoofing.lesson" id="A9SecurityLoggingFailures-LoggingSecurity">Logging Security</a></li></ul></li><li class="sub-menu ng-scope"><a category="A10Server-sideRequestForgery"><i class="fa fa-angle-right pull-right"></i><span>(A10) Server-side Request Forgery</span></a><ul class="slideDown lessonsAndStages" id="A10Server-sideRequestForgery"><li class="lesson"><a href="http://127.0.0.1:8080/WebGoat/start.mvc?username=student2#lesson/SSRF.lesson" id="A10Server-sideRequestForgery-Server-SideRequestForgery">Server-Side Request Forgery</a></li></ul></li><li class="sub-menu ng-scope"><a category="Clientside"><i class="fa fa-angle-right pull-right"></i><span>Client side</span></a><ul class="slideDown lessonsAndStages" id="Clientside"><li class="lesson"><a href="http://127.0.0.1:8080/WebGoat/start.mvc?username=student2#lesson/BypassRestrictions.lesson" id="Clientside-Bypassfront-endrestrictions">Bypass front-end restrictions</a></li><li class="lesson"><a href="http://127.0.0.1:8080/WebGoat/start.mvc?username=student2#lesson/ClientSideFiltering.lesson" id="Clientside-Clientsidefiltering">Client side filtering</a></li><li class="lesson"><a href="http://127.0.0.1:8080/WebGoat/start.mvc?username=student2#lesson/HtmlTampering.lesson" id="Clientside-HTMLtampering">HTML tampering</a></li></ul></li><li class="sub-menu ng-scope"><a category="Challenges"><i class="fa fa-angle-right pull-right"></i><span>Challenges</span></a><ul class="slideDown lessonsAndStages" id="Challenges"><li class="lesson"><a href="http://127.0.0.1:8080/WebGoat/start.mvc?username=student2#lesson/ChallengeIntro.lesson" id="Challenges-WebGoatChallenge">WebGoat Challenge</a></li><li class="lesson"><a href="http://127.0.0.1:8080/WebGoat/start.mvc?username=student2#lesson/Challenge1.lesson" id="Challenges-Adminlostpassword">Admin lost password</a></li><li class="lesson"><a href="http://127.0.0.1:8080/WebGoat/start.mvc?username=student2#lesson/Challenge5.lesson" id="Challenges-Withoutpassword">Without password</a></li><li class="lesson"><a href="http://127.0.0.1:8080/WebGoat/start.mvc?username=student2#lesson/Challenge7.lesson" id="Challenges-Adminpasswordreset">Admin password reset</a></li><li class="lesson"><a href="http://127.0.0.1:8080/WebGoat/start.mvc?username=student2#lesson/Challenge8.lesson" id="Challenges-Withoutaccount">Without account</a></li></ul></li></ul></div>
+    </aside>
+    <!--sidebar left end-->
+
+    <!--main content start-->
+    <section class="main-content-wrapper">
+        <section id="main-content">
+            <div id="lesson-page" class="pages" style="display: block;">
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="col-md-12" align="left">
+                            <div id="lesson-content-wrapper" class="panel">
+                                <div class="" id="error-notification-container">
+                                    <div class="" id="error-notification">
+                                        <i class="fa fa-exclamation-circle"> There was an unexpected error. Please try
+                                            again.</i>
+                                    </div>
+                                </div>
+                                <div class="" id="help-controls">
+                                    <button class="btn btn-primary btn-xs btn-danger help-button" id="show-hints-button" style="display: none;">Show hints</button>
+
+                                    <button class="btn btn-xs help-button" id="restart-lesson-button">Reset lesson</button>
+                                </div>
+
+                                <div class="lesson-hint" id="lesson-hint-container">
+                                    <!--<h4>Hints</h4>-->
+                                    <div class="panel">
+                                        <div id="message" class="info"></div>
+                                        <div class="panel-body" id="lesson-hint">
+                                            <span class="glyphicon-class glyphicon glyphicon-circle-arrow-left" id="show-prev-hint"></span>
+                                            <span class="glyphicon-class glyphicon glyphicon-circle-arrow-right" id="show-next-hint"></span>
+                                            <br>
+                                            <span id="lesson-hint-content"></span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="lesson-hint" id="lesson-overview-container">
+                                    <div class="panel">
+                                        <div class="panel-body" id="lesson-overview"></div>
+                                    </div>
+                                </div>
+                                <div id="lesson-page-controls"><div>
+    <div class="page-link-wrapper">
+        <span class="glyphicon-class glyphicon glyphicon-circle-arrow-left show-prev-page" style="display: none;"></span>
+        
+        
+            <a href="http://127.0.0.1:8080/WebGoat/start.mvc?username=student2#lesson/IDOR.lesson/0" alt="Page 0" class="no-underline">
+            
+                <div class="page-link  cur-page">1</div>
+            
+            </a>
+        
+            <a href="http://127.0.0.1:8080/WebGoat/start.mvc?username=student2#lesson/IDOR.lesson/1" alt="Page 1" class="no-underline">
+            
+                <div class="attack-link solved-false ">2</div>
+            
+            </a>
+        
+            <a href="http://127.0.0.1:8080/WebGoat/start.mvc?username=student2#lesson/IDOR.lesson/2" alt="Page 2" class="no-underline">
+            
+                <div class="attack-link solved-false ">3</div>
+            
+            </a>
+        
+            <a href="http://127.0.0.1:8080/WebGoat/start.mvc?username=student2#lesson/IDOR.lesson/3" alt="Page 3" class="no-underline">
+            
+                <div class="attack-link solved-false ">4</div>
+            
+            </a>
+        
+            <a href="http://127.0.0.1:8080/WebGoat/start.mvc?username=student2#lesson/IDOR.lesson/4" alt="Page 4" class="no-underline">
+            
+                <div class="attack-link solved-false ">5</div>
+            
+            </a>
+        
+            <a href="http://127.0.0.1:8080/WebGoat/start.mvc?username=student2#lesson/IDOR.lesson/5" alt="Page 5" class="no-underline">
+            
+                <div class="page-link ">6</div>
+            
+            </a>
+        
+        <span class="glyphicon-class glyphicon glyphicon-circle-arrow-right show-next-page"></span>
+    </div>
+</div>
+</div>
+
+                                <div class="lesson-content">
+
+
+
+<!-- Model is setup in the class StartLesson -->
+<div id="lessonInstructions"></div>
+
+<div id="message" class="info"></div>
+<br>
+
+
+
+<div class="lesson-page-wrapper" style="display: block;">
+    <!-- reuse this lesson-page-wrapper block for each 'page' of content in your lesson -->
+    <!-- include content here, or can be placed in another location. Content will be presented via asciidocs files,
+    which you put in src/main/resources/plugin/lessonplans/{lang}/{fileName}.adoc -->
+    <div class="sect1">
+<h2 id="_direct_object_references">Direct Object References</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Direct Object References are when an application uses client-provided input to access data &amp; objects.</p>
+</div>
+<div class="sect2">
+<h3 id="_examples">Examples</h3>
+<div class="paragraph">
+<p>Examples of Direct Object References using the GET method may look something like</p>
+</div>
+<div class="paragraph">
+<p><code><a href="https://some.company.tld/dor?id=12345" class="bare">https://some.company.tld/dor?id=12345</a></code></p>
+</div>
+<div class="paragraph">
+<p><code><a href="https://some.company.tld/images?img=12345" class="bare">https://some.company.tld/images?img=12345</a></code></p>
+</div>
+<div class="paragraph">
+<p><code><a href="https://some.company.tld/dor/12345" class="bare">https://some.company.tld/dor/12345</a></code></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_other_methods">Other Methods</h3>
+<div class="paragraph">
+<p>POST, PUT, DELETE or other methods are also potentially susceptible and mainly only differ in the method and the potential payload.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_insecure_direct_object_references"><strong>Insecure</strong> Direct Object References</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>These are considered insecure when the reference is not properly handled and allows for authorization bypasses or disclose private data that could be used to
+perform operations or access data that the user should not be able to perform or access.
+Let’s say that as a user, you go to view your profile and the URL looks something like:</p>
+</div>
+<div class="paragraph">
+<p><code><a href="https://some.company.tld/app/user/23398" class="bare">https://some.company.tld/app/user/23398</a></code></p>
+</div>
+<div class="paragraph">
+<p>... and you can view your profile there. What happens if you navigate to:</p>
+</div>
+<div class="paragraph">
+<p><code><a href="https://some.company.tld/app/user/23399" class="bare">https://some.company.tld/app/user/23399</a></code> …​ or use another number at the end.  If you can manipulate the number (user id) and view another’s profile, then the object reference is insecure.
+This of course can be checked or expanded beyond GET methods to view data, but to also manipulate data.</p>
+</div>
+<div class="sect2">
+<h3 id="_more_good_reading">More good reading</h3>
+<div class="paragraph">
+<p>Before we go on to practice, here’s some good reading on Insecure Direct Object References:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://www.owasp.org/index.php/Testing_for_Insecure_Direct_Object_References_(OTG-AUTHZ-004)" class="bare">https://www.owasp.org/index.php/Testing_for_Insecure_Direct_Object_References_(OTG-AUTHZ-004)</a></p>
+</li>
+<li>
+<p><a href="https://www.owasp.org/index.php/Top_10-2017_A5-Broken_Access_Control" class="bare">https://www.owasp.org/index.php/Top_10-2017_A5-Broken_Access_Control</a></p>
+</li>
+<li>
+<p><a href="https://cheatsheetseries.owasp.org/cheatsheets/Insecure_Direct_Object_Reference_Prevention_Cheat_Sheet.html" class="bare">https://cheatsheetseries.owasp.org/cheatsheets/Insecure_Direct_Object_Reference_Prevention_Cheat_Sheet.html</a></p>
+</li>
+<li>
+<p><a href="https://www.owasp.org/index.php/Top_10_2013-A4-Insecure_Direct_Object_References" class="bare">https://www.owasp.org/index.php/Top_10_2013-A4-Insecure_Direct_Object_References</a></p>
+</li>
+<li>
+<p><a href="http://cwe.mitre.org/data/definitions/639.html" class="bare">http://cwe.mitre.org/data/definitions/639.html</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="lesson-page-wrapper" style="display: none;">
+    <!-- reuse this lesson-page-wrapper block for each 'page' of content in your lesson -->
+    <!-- include content here, or can be placed in another location. Content will be presented via asciidocs files,
+    which you put in src/main/resources/plugin/lessonplans/{lang}/{fileName}.adoc -->
+    <div class="sect2">
+<h3 id="_authenticate_first_abuse_authorization_later">Authenticate First, Abuse Authorization Later</h3>
+<div class="paragraph">
+<p>Many access control issues are susceptible to attack from an authenticated-but-unauthorized user. So, let’s start by legitimately authenticating. Then, we will look for ways to bypass or abuse Authorization.</p>
+</div>
+<div class="paragraph">
+<p>The id and password for the account in this case are 'tom' and 'cat' (It is an insecure app, right?).</p>
+</div>
+<div class="paragraph">
+<p>After authenticating, proceed to the next screen.</p>
+</div>
+</div>
+    <div class="attack-container">
+        <div class="assignment-success"><i class="fa fa-2 fa-check hidden" aria-hidden="true"></i></div>
+        <!-- using attack-form class on your form, will allow your request to be ajaxified and stay within the display framework for webgoat -->
+        <!-- using attack-form class on your form will allow your request to be ajaxified and stay within the display framework for webgoat -->
+        <!-- you can write your own custom forms, but standard form submission will take you to your endpoint and outside of the WebGoat framework -->
+        <!-- of course, you can write your own ajax submission /handling in your own javascript if you like -->
+
+        <!-- modify the action to point to the intended endpoint -->
+        <form class="attack-form" accept-charset="UNKNOWN" method="POST" name="form" action="http://127.0.0.1:8080/WebGoat/IDOR/login">
+            <table>
+                <tbody><tr>
+                    <td>user/pass</td>
+                    <td>user:<input name="username" value="" type="TEXT"></td>
+                    <td>pass:<input name="password" value="" type="password"></td>
+                    <td>
+                        <input name="submit" value="Submit" type="SUBMIT">
+                    </td>
+                </tr>
+            </tbody></table>
+        </form>
+        <!-- do not remove the two following div's, this is where your feedback/output will land -->
+        <div class="attack-feedback" style="display: none;"></div>
+        <div class="attack-output" style="display: none;"></div>
+        <!-- ... of course, you can move them if you want to, but that will not look consistent to other lessons -->
+    </div>
+</div>
+
+<div class="lesson-page-wrapper" style="display: none;">
+    <!-- reuse this lesson-page-wrapper block for each 'page' of content in your lesson -->
+    <!-- include content here, or can be placed in another location. Content will be presented via asciidocs files,
+    which you put in src/main/resources/plugin/lessonplans/{lang}/{fileName}.adoc -->
+    <div class="sect2">
+<h3 id="_observing_differences_behaviors">Observing Differences &amp; Behaviors</h3>
+<div class="paragraph">
+<p>A consistent principle from the offensive side of AppSec is to view differences from the raw response to what is visible.
+In other words (as you may have already noted in the client-side filtering lesson), there is often data in the raw response that doesn’t show up on the screen/page.
+View the profile below and take note of the differences.</p>
+</div>
+</div>
+    <div class="nonattack-container">
+        <div class="assignment-success"><i class="fa fa-2 fa-check hidden" aria-hidden="true"></i></div>
+        <!-- using attack-form class on your form, will allow your request to be ajaxified and stay within the display framework for webgoat -->
+        <!-- using attack-form class on your form will allow your request to be ajaxified and stay within the display framework for webgoat -->
+        <!-- you can write your own custom forms, but standard form submission will take you to your endpoint and outside of the WebGoat framework -->
+        <!-- of course, you can write your own ajax submission /handling in your own javascript if you like -->
+
+        <!-- modify the action to point to the intended endpoint -->
+        <form class="attack-form" accept-charset="UNKNOWN" method="GET" name="form" action="http://127.0.0.1:8080/WebGoat/IDOR/profile">
+            <script src="./WebGoat_IDOR_files/idor.js"></script>
+
+            <input name="View Profile" value="View Profile" type="button" onclick="onViewProfile();">
+
+        </form>
+        <div id="idor-profile"></div>
+        <!-- do not remove the two following div's, this is where your feedback/output will land -->
+        <div class="attack-feedback" style="display: none;"></div>
+        <div class="attack-output" style="display: none;"></div>
+        <!-- ... of course, you can move them if you want to, but that will not look consistent to other lessons -->
+    </div>
+
+    <div class="attack-container">
+        <div class="assignment-success"><i class="fa fa-2 fa-check hidden" aria-hidden="true"></i></div>
+        <!-- using attack-form class on your form, will allow your request to be ajaxified and stay within the display framework for webgoat -->
+        <!-- using attack-form class on your form will allow your request to be ajaxified and stay within the display framework for webgoat -->
+        <!-- you can write your own custom forms, but standard form submission will take you to your endpoint and outside of the WebGoat framework -->
+        <!-- of course, you can write your own ajax submission /handling in your own javascript if you like -->
+        <div class="paragraph">
+<p>In the text input below, list the two attributes that are in the server’s response, but don’t show above in the profile.</p>
+</div>
+        <!-- modify the action to point to the intended endpoint -->
+        <form class="attack-form" method="POST" name="diff-form" action="http://127.0.0.1:8080/WebGoat/IDOR/diff-attributes">
+            <input name="attributes" type="text">
+            <input name="Submit Diffs" value="Submit Diffs" type="submit">
+        </form>
+
+        <!-- do not remove the two following div's, this is where your feedback/output will land -->
+        <div class="attack-feedback" style="display: none;"></div>
+        <div class="attack-output" style="display: none;"></div>
+        <!-- ... of course, you can move them if you want to, but that will not look consistent to other lessons -->
+    </div>
+</div>
+
+<div class="lesson-page-wrapper" style="display: none;">
+    <!-- reuse this lesson-page-wrapper block for each 'page' of content in your lesson -->
+    <!-- include content here, or can be placed in another location. Content will be presented via asciidocs files,
+    which you put in src/main/resources/plugin/lessonplans/{lang}/{fileName}.adoc -->
+    <div class="sect2">
+<h3 id="_guessing_predicting_patterns">Guessing &amp; Predicting Patterns</h3>
+<div class="sect3">
+<h4 id="_view_your_own_profile_another_way">View Your Own Profile Another Way</h4>
+<div class="paragraph">
+<p>The application we are working with seems to follow a RESTful pattern so far as the profile goes. Many apps have roles in which an elevated user may access content of another.
+In that case, just /profile won’t work since the own user’s session/authentication data won’t tell us whose profile they want view.
+So, what do you think is a likely pattern to view your own profile explicitly using a direct object reference?</p>
+</div>
+</div>
+</div>
+    <div class="attack-container">
+        <div class="assignment-success"><i class="fa fa-2 fa-check hidden" aria-hidden="true"></i></div>
+        <!-- using attack-form class on your form, will allow your request to be ajaxified and stay within the display framework for webgoat -->
+        <!-- using attack-form class on your form will allow your request to be ajaxified and stay within the display framework for webgoat -->
+        <!-- you can write your own custom forms, but standard form submission will take you to your endpoint and outside of the WebGoat framework -->
+        <!-- of course, you can write your own ajax submission /handling in your own javascript if you like -->
+
+        <!-- modify the action to point to the intended endpoint -->
+        <form class="attack-form" accept-charset="UNKNOWN" method="POST" name="form" action="http://127.0.0.1:8080/WebGoat/IDOR/profile/alt-path">
+            <div class="paragraph">
+<p>Please input the alternate path to the Url to view your own profile.  Please start with 'WebGoat' (i.e. disregard 'http://localhost:8080/')</p>
+</div>
+            <input name="url" value="WebGoat/" type="text">
+            <input name="submit" value="Submit" type="SUBMIT">
+        </form>
+        <!-- do not remove the two following div's, this is where your feedback/output will land -->
+        <div class="attack-feedback" style="display: none;"></div>
+        <div class="attack-output" style="display: none;"></div>
+        <!-- ... of course, you can move them if you want to, but that will not look consistent to other lessons -->
+    </div>
+</div>
+
+<div class="lesson-page-wrapper" style="display: none;">
+    <!-- reuse this lesson-page-wrapper block for each 'page' of content in your lesson -->
+    <!-- include content here, or can be placed in another location. Content will be presented via asciidocs files,
+    which you put in src/main/resources/plugin/lessonplans/{lang}/{fileName}.adoc -->
+    <div class="sect2">
+<h3 id="_playing_with_the_patterns">Playing with the Patterns</h3>
+<div class="sect3">
+<h4 id="_view_another_profile">View Another Profile</h4>
+<div class="paragraph">
+<p>View someone else’s profile by using the alternate path you already used to view your own profile. Use the 'View Profile' button
+and intercept/modify the request to view another profile. Alternatively, you may also just be able to use a manual GET request with
+your browser.</p>
+</div>
+</div>
+</div>
+    <div class="nonattack-container">
+        <div class="assignment-success"><i class="fa fa-2 fa-check hidden" aria-hidden="true"></i></div>
+        <!-- using attack-form class on your form, will allow your request to be ajaxified and stay within the display framework for webgoat -->
+        <!-- using attack-form class on your form will allow your request to be ajaxified and stay within the display framework for webgoat -->
+        <!-- you can write your own custom forms, but standard form submission will take you to your endpoint and outside of the WebGoat framework -->
+        <!-- of course, you can write your own ajax submission /handling in your own javascript if you like -->
+
+        <!-- modify the action to point to the intended endpoint -->
+        <form class="attack-form" accept-charset="UNKNOWN" id="view-other" method="GET" name="view-other-profile" action="http://127.0.0.1:8080/WebGoat/IDOR/profile/%7BuserId%7D">
+            <script src="./WebGoat_IDOR_files/idor.js"></script>
+
+            <input name="View Profile" value="View Profile" type="submit">
+
+        </form>
+
+        <!-- do not remove the two following div's, this is where your feedback/output will land -->
+        <div class="attack-feedback" style="display: none;"></div>
+        <div class="attack-output" style="display: none;"></div>
+        <!-- ... of course, you can move them if you want to, but that will not look consistent to other lessons -->
+    </div>
+
+    <div class="sect3">
+<h4 id="_edit_another_profile">Edit Another Profile</h4>
+<div class="paragraph">
+<p>Older apps may follow different patterns, but RESTful apps (which is what’s going on here) often just change methods (and include a body or not)
+to perform different functions.</p>
+</div>
+<div class="paragraph">
+<p>Use that knowledge to take the same base request, change its method, path and body (payload) to modify another user’s (Buffalo Bill’s) profile.
+Change the role to something lower (since higher privilege roles and users are usually lower numbers). Also change the
+user’s color to 'red'.</p>
+</div>
+</div>
+    <div class="attack-container">
+        <div class="assignment-success"><i class="fa fa-2 fa-check hidden" aria-hidden="true"></i></div>
+        <!-- using attack-form class on your form, will allow your request to be ajaxified and stay within the display framework for webgoat -->
+        <!-- using attack-form class on your form will allow your request to be ajaxified and stay within the display framework for webgoat -->
+        <!-- you can write your own custom forms, but standard form submission will take you to your endpoint and outside of the WebGoat framework -->
+        <!-- of course, you can write your own ajax submission /handling in your own javascript if you like -->
+
+        <!-- modify the action to point to the intended endpoint -->
+        <form class="attack-form" accept-charset="UNKNOWN" id="edit-other" method="GET" name="edit-other-profile" action="http://127.0.0.1:8080/WebGoat/IDOR/profile/%7BuserId%7D">
+            <script src="./WebGoat_IDOR_files/idor.js"></script>
+
+            <input name="View Profile" value="View Profile" type="submit">
+
+        </form>
+        <!-- do not remove the two following div's, this is where your feedback/output will land -->
+        <div class="attack-feedback" style="display: none;"></div>
+        <div class="attack-output" style="display: none;"></div>
+        <!-- ... of course, you can move them if you want to, but that will not look consistent to other lessons -->
+    </div>
+
+</div>
+
+<div class="lesson-page-wrapper" style="display: none;">
+    <!-- reuse this lesson-page-wrapper block for each 'page' of content in your lesson -->
+    <!-- include content here, or can be placed in another location. Content will be presented via asciidocs files,
+    which you put in src/main/resources/plugin/lessonplans/{lang}/{fileName}.adoc -->
+    <div class="sect1">
+<h2 id="_secure_object_references">Secure Object References</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_start_with_the_end_in_mind">Start with the end in mind</h3>
+<div class="paragraph">
+<p>Do you have your access control documented? If you don’t, how can you enforce it?  Access control is defined
+by the business logic that guides the application and/or privacy and other laws.</p>
+</div>
+<div class="sect3">
+<h4 id="_horizontal_and_vertical_access_control">Horizontal and Vertical Access Control</h4>
+<div class="paragraph">
+<p>Often times we think of access control in terms of 'roles' (user, power-user, admin, etc.).
+However, as noted in the previous exercises, users with the same 'role' can access each other’s data. This is
+horizontal access control.  Both should be enforced.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. Access Control Matrix Example</caption>
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Endpoint</th>
+<th class="tableblock halign-left valign-top">Method</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Roles, Access Rules</th>
+<th class="tableblock halign-left valign-top">Notes, Caveats</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">/profile</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GET</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">view user profile</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Logged in User, can only view their own role</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Admin roles must use diff Url to view others' profiles (see below)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">/profile/{id}</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GET</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">view user profile of a given user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Logged in User can view their own profile by {id}, admins can also view</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">n/a</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">/profile/{id}</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PUT</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">edit user profile. profile object submitted from client with request</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Logged in User can edit their own profile by {id}, admins can also edit.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Admin edit must be logged</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_audit_access">Audit Access</h4>
+<div class="paragraph">
+<p>As displayed in the above example, your access control rules should include provisions of what access is logged.
+For example, if a super-user or admin can edit other’s profiles …​ That is something that should be logged. Other
+examples would include detected violations or attempts to violate access control mechanisms.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_using_indrect_references">Using Indrect References</h3>
+<div class="paragraph">
+<p>Not many applications employ it, but you can use <strong>indirect</strong> references. In this case you can run your references across a hashing,
+encoding or other function on the server so that the id that the client sees is not the actual reference
+which the server handles.  This will reduce efficiency some (a common trade-off for security) and is still subject to being
+guessed, brute-forced or reverse engineered.</p>
+</div>
+<div class="paragraph">
+<p>This approach should not be the only protection used. It can be used as an additional layer. Your server must
+implement the logic of mapping client (indirect) to server (direct) references.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_access_control_apis">Access Control &amp; APIs</h3>
+<div class="paragraph">
+<p>Many time, APIs or RESTFul endpoints rely on obscurity , a static 'key', or lack of imagination on the user’s part to control access.
+Good options such as digitally signed JSON Web Tokens (<a href="https://jwt.io/" class="bare">https://jwt.io</a>) are a good option for API authentication &amp; access control using a
+combination of the claims and a digital/cryptographic signature to validate the consumer.  Other emerging standards such as
+Secure Token Binding promise a 'cryptographic state' for web services in the request headers …​
+<a href="https://tools.ietf.org/html/draft-ietf-tokbind-protocol-10" class="bare">https://tools.ietf.org/html/draft-ietf-tokbind-protocol-10</a></p>
+</div>
+<div class="paragraph">
+<p><a href="https://tools.ietf.org/html/draft-ietf-tokbind-negotiation-05" class="bare">https://tools.ietf.org/html/draft-ietf-tokbind-negotiation-05</a></p>
+</div>
+<div class="paragraph">
+<p><a href="https://tools.ietf.org/html/draft-ietf-tokbind-https-06" class="bare">https://tools.ietf.org/html/draft-ietf-tokbind-https-06</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+
+</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="report-card-page" class="pages" style="display: none;">
+            </div>
+        </section>
+    </section>
+
+</section>
+
+
+<!-- About WebGoat Modal -->
+<div class="modal" id="about-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3 class="modal-title" id="myModalLabel">About WebGoat - Provided by the OWASP Foundation</h3>
+    </div>
+    <div class="modal-body modal-scroll">
+        <p>Thanks for hacking The Goat!</p>
+
+        <p>WebGoat is a demonstration of common web application flaws. The
+            associated exercises are intended to provide hands-on experience with
+            techniques aimed at demonstrating and testing application penetration.
+        </p>
+
+        <p>From the entire WebGoat team, we appreciate your interest and efforts
+            in making applications not just better, but safer and more secure for
+            everyone. We, as well as our sacrificial goat, thank you.</p>
+
+        <p>
+            Version: <span>2025.3</span>
+        </p>
+
+        <div class="row">
+            <div class="col-md-6">
+                <p>Contact us:
+                </p><ul>
+                    <li>WebGoat mailing list: <span>owasp-webgoat@lists.owasp.org</span></li>
+                    <li>Bruce Mayhew: <span>webgoat@owasp.org</span></li>
+                </ul>
+                <p></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <p>WebGoat Authors
+                </p><ul>
+                    <li>Bruce Mayhew (Author &amp; Project Lead)</li>
+                    <li>Jeff Williams (Author &amp; Original Idea)</li>
+                    <li>Jason White (Architect)</li>
+                    <li>Nanne Baars (Plugin &amp; Platform Architecture)</li>
+                    <li>Richard Lawson (Architect)</li>
+                </ul>
+                <p></p>
+            </div>
+            <div class="col-md-6">
+                <p>Active Contributors
+                </p><ul>
+                    <li>Nanne Baars (Developer)</li>
+                    <li>Jason White (Developer)</li>
+                    <li>Doug Morato (Developer &amp; CI)</li>
+                    <li>Bruce Mayhew (Developer)</li>
+                    <li>René Zubcevic (Developer)</li>
+                    <li>Àngel Ollé Blázquez (Developer)</li>
+                </ul>
+                <p></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <p>WebGoat Design Team (Active)
+                </p><ul>
+                    <li>Nanne Baars (Plugin &amp; Platform Architecture)</li>
+                    <li>Bruce Mayhew (Goat Herder)</li>
+                    <li>Jason White (User Interface)</li>
+                </ul>
+                <p></p><br>
+
+                <p>Corporate Sponsorship - Companies that have donated significant time to WebGoat development
+                </p><ul>
+                    <li>Aspect Security</li>
+                    <li>Ounce Labs</li>
+                </ul>
+                <p></p><br>
+
+                <p>Did we miss you? Our sincere apologies, as we know there have
+                    been many contributors over the years. If your name does not
+                    appear in any of the lists above, please send us a note. We'll
+                    get you added with no further sacrifices required.</p>
+            </div>
+            <div class="col-md-6">
+                <p>Past Contributors
+                </p><ul>
+                    <li>Richard Lawson (Architect)</li>
+                    <li>Michael Dever (Developer)</li>
+                    <li>Jeff Wayman (Docs)</li>
+                    <li>Dave Cowden (Everything)</li>
+                    <li>Richard Lawson (Service Layer)</li>
+                    <li>Keith Gasser (Survey/Security)</li>
+                    <li>Devin Mayhew (Setup/Admin)</li>
+                    <li>Li Simon (Developer)</li>
+                    <li>Ali Looney (UI Design)</li>
+                    <li>David Anderson (Developer/Design)</li>
+                    <li>Christopher Blum (Lessons)</li>
+                    <li>Laurence Casey (Graphics)</li>
+                    <li>Brian Ciomei (Bug fixes)</li>
+                    <li>Rogan Dawes (Lessons)</li>
+                    <li>Erwin Geirnaert (Solutions)</li>
+                    <li>Aung Knant (Documentation)</li>
+                    <li>Ryan Knell (Lessons)</li>
+                    <li>Christine Koppeit (Build)</li>
+                    <li>Sherif Kousa (Lessons/Documentation)</li>
+                    <li>Reto Lippuner (Lessons)</li>
+                    <li>PartNet (Lessons)</li>
+                    <li>Yiannis Pavlosoglou (Lessons)</li>
+                    <li>Eric Sheridan (Lessons)</li>
+                    <li>Alex Smolen (Lessons)</li>
+                    <li>Chuck Willis (Lessons)</li>
+                    <li>Marcel Wirth (Lessons)</li>
+                </ul>
+                <p></p>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+    </div>
+</div>
+    </div>
+</div>
+
+
+
+
+</body></html>
