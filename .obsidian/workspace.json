@@ -4,12 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "f9f3bde7cf41d7a6",
+        "id": "9488d1baeb779b17",
         "type": "tabs",
-        "dimension": 73.46128391793515,
         "children": [
           {
-            "id": "a6ce65fe8a94c594",
+            "id": "326fd8a266c43dbd",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -20,23 +19,6 @@
               },
               "icon": "lucide-file",
               "title": "JuiceShopStart"
-            }
-          }
-        ]
-      },
-      {
-        "id": "9488d1baeb779b17",
-        "type": "tabs",
-        "dimension": 26.53871608206486,
-        "children": [
-          {
-            "id": "326fd8a266c43dbd",
-            "type": "leaf",
-            "state": {
-              "type": "empty",
-              "state": {},
-              "icon": "lucide-file",
-              "title": "New tab"
             }
           }
         ]
@@ -213,9 +195,9 @@
   },
   "active": "326fd8a266c43dbd",
   "lastOpenFiles": [
+    "Cryptography/Cryptography.md",
     "JuiceShop/JuiceShopStart.md",
     "JuiceShop/JuiceShop_AdminLoginSQLi.png",
-    "Cryptography/Cryptography.md",
     "Cryptography/cryptography1.png",
     "Cryptography/cryptography2.png",
     "HijackSession/A01BrokenAccessControl_burpsuit.md",
