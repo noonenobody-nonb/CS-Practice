@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "JuiceShop/JuiceShopStart.md",
+                "file": "AC-C0lddBox/C0lddBox_guide.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "JuiceShopStart"
+              "title": "C0lddBox_guide"
             }
           }
         ]
@@ -80,7 +80,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 365.5
+    "width": 363.5
   },
   "right": {
     "id": "ec9710f273d83479",
@@ -195,24 +195,32 @@
   },
   "active": "326fd8a266c43dbd",
   "lastOpenFiles": [
-    "Cryptography/Cryptography.md",
+    "AC-C0lddBox/C0ldBoxOWASP.md",
+    "AC-deathnote/description deathnote.md",
+    "AC-C0lddBox/C0lddBox_guide.md",
+    "AC-C0lddBox/C0lddBox/add1.png",
+    "AC-C0lddBox/C0lddBox/image-31.png",
+    "AC-C0lddBox/C0lddBox/image-21.png",
+    "AC-C0lddBox/C0lddBox/image-19.png",
+    "AC-C0lddBox/C0lddBox/image-18.png",
+    "AC-C0lddBox/C0lddBox/image-17.png",
+    "AC-C0lddBox/C0lddBox/image-16.png",
+    "AC-C0lddBox/C0lddBox/image-15.png",
+    "AC-C0lddBox/C0lddBox/image-14.png",
+    "AC-C0lddBox/C0lddBox/image-13.png",
+    "AC-C0lddBox/C0lddBox_MITRE.md",
+    "AC-C0lddBox/C0lddBox_vulnerabilities_ua.md",
+    "AC-deathnote/DeathNote_MITRE_ua.md",
+    "AC-deathnote/DN_src/READMI.md",
+    "AC-deathnote/DeathNote_vulnerabilities_ua.md",
     "JuiceShop/JuiceShopStart.md",
-    "JuiceShop/JuiceShop_AdminLoginSQLi.png",
-    "Cryptography/cryptography1.png",
-    "Cryptography/cryptography2.png",
+    "Cryptography/Cryptography.md",
     "HijackSession/A01BrokenAccessControl_burpsuit.md",
-    "HijackSession/bp01.png",
     "SQLInjections/A03InjectionSQLintro.md",
     "Untitled.base",
     "Untitled 1.canvas",
     "Untitled.canvas",
     "2026-07-31.md",
-    "JuiceShop/Screenshot_2026-07-30_16-23-01.png",
-    "JuiceShop/Screenshot_2026-07-30_16-22-07.png",
-    "JuiceShop/Screenshot_2026-07-30_16-20-45.png",
-    "JuiceShop/JuiceShop_scoreboard.png",
-    "JuiceShop/Screenshot_2026-07-30_16-18-00.png",
-    "JuiceShop/Screenshot_2026-07-30_16-17-28.png",
     "JuiceShop/readmi.md",
     "JuiceShop",
     "InsecureDirectObjectReference/IDOR1.md",
